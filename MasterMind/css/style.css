@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    display: flex;
+    background-image: url(../images/fondo.jpg);
+    background-repeat: no-repeat;
+}
+#cajaIzquierda{
+    align-self: flex-end;
+}
+#coloresElegidos{
+    display: flex;
+    border: 1px solid black;
+    background-color: lightgray;
+}
+#resultadoAciertos{
+    display: flex;
+    border: 1px solid black;
+    background-color: lightgray;
+}
+#combinaciones{
+    min-width: 500px;
+    display: flex;
+}
+#colores{
+    width: min-content;
+}
+#comprobar{
+    width: 70px
+}
