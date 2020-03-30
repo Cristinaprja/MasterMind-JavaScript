@@ -4,6 +4,7 @@
         fichas = document.getElementsByTagName("circle"); //Todas las fichas, las 8 primeras con los colores para elegir
         fichasElegidas = document.getElementById("coloresElegidos").getElementsByTagName("circle");
         fichasSolucion = document.getElementById("resultadoAciertos").getElementsByTagName("circle");
+        document.getElementById("btnReiniciar").addEventListener("click", reiniciar);
         for (let i = 8; i < 16; i++) {
             fichas[i].addEventListener("click", ponerFicha);
         }
@@ -13,6 +14,9 @@
         document.getElementById("comprobar").addEventListener("click", checkIntento);
 
         copiaCombinacion = document.getElementById("combinaciones").cloneNode(true);
+    }
+    let reiniciar = () => {
+        location.reload();
     }
     let ponerFicha = (event) => {
         for (ficha of fichasElegidas) {
@@ -29,9 +33,10 @@
     }
     let pintarSolucion = (solucion) => {
         for (let i=0; i<solucion.length; i++) {
-            if (solucion[i] == "negra") {
+            console.log(solucion[i]);
+            if (solucion[i] == "negro") {
                 fichasSolucion[i].setAttribute("fill", "black");
-            } else if (solucion[i] == "blanca") {
+            } else if (solucion[i] == "blanco") {
                 fichasSolucion[i].setAttribute("fill", "white");
             }
         }
@@ -44,7 +49,6 @@
         }
         intento = [];
         let solucion;
-        let aciertos = 0;
         for (ficha of fichasElegidas) {
             if (ficha.getAttribute("fill") == "red") {
                 intento.push("rojo")
@@ -57,7 +61,7 @@
             } else if (ficha.getAttribute("fill") == "green") {
                 intento.push("verde")
             } else if (ficha.getAttribute("fill") == "brown") {
-                intento.push("marron")
+                intento.push("marrón")
             } else if (ficha.getAttribute("fill") == "white") {
                 intento.push("blanco")
             } else if (ficha.getAttribute("fill") == "black") {
@@ -66,9 +70,19 @@
         }
         solucion = Mastermind.comprobarCoincidencia(intento);
         pintarSolucion(solucion);
+        console.log(solucion);
 
-        if (solucion.length==4){
-            alert("Has ganado !!");
+        let comprobarSiHasGanado = (solucion) => {
+            for(let i = 0; i<=3; i++){
+                if(solucion[i] != "negro"){
+                    return false;
+                }
+            }
+            return true;
+        }
+        if(comprobarSiHasGanado(solucion)){
+            confirm("!!HAS GANADO¡¡");
+            reiniciar();
         }else{
             intento = "";
             masIntentos();

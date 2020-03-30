@@ -4,8 +4,8 @@
 }
 main{
     display: flex;
-    background-image: url(../images/fondo.jpg);
-    background-repeat: no-repeat;
+    width: 60%;
+    margin: 0 auto;
 }
 #cajaIzquierda{
     align-self: flex-end;
@@ -29,4 +29,11 @@ main{
 }
 #comprobar{
     width: 70px
+}
+body{
+    display: inline-block;
+}
+#btnReiniciar{
+    width: 50%;
+    margin: 0 auto;
 }
