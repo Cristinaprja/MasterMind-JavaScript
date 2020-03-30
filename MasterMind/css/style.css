@@ -32,8 +32,10 @@ main{
 }
 body{
     display: inline-block;
+    text-align: center;
 }
 #btnReiniciar{
+    margin-top: 10px;
     width: 50%;
     margin: 0 auto;
 }
