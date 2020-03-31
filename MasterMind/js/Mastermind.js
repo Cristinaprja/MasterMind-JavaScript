@@ -1,74 +1,72 @@
-let Mastermind = function(){
-    let arrayObjetivo=[];
-    const COLORES = ["rojo","amarillo","naranja","azul","verde","marrón","blanco","negro"];
+let Mastermind = function () {
+    let arrayObjetivo = [];
+    const COLORES = ["rojo", "amarillo", "naranja", "azul", "verde", "marrón", "blanco", "negro"];
     let hasGanado = false;
-    
-    let init = function(){
-        for(i=0; i<4; i++){
+
+    let init = function () {
+        for (i = 0; i < 4; i++) {
             arrayObjetivo.push(COLORES[Math.floor(Math.random() * COLORES.length)]);
         }
         console.log(arrayObjetivo);
         return arrayObjetivo;
     }
-    let mostrar = function(){
+    let mostrar = function () {
         return arrayObjetivo;
     }
-    let comprobarCoincidencia = function(intento){
-        if (!hasGanado){
+    let comprobarCoincidencia = function (intento) {
+        if (!hasGanado) {
             comprobarHasGanado(comprobaciones(intento));
         }
         return comprobaciones(intento);
     }
-    let comprobaciones = function(intento){
-        arrayCorrectos =[];
-        // arrayComprobaciones = arrayObjetivo.slice();
-        arrayCombinacionAux = arrayObjetivo.slice();
+    let comprobaciones = function (intento) {
+        arrayCorrectos = [];
         resultado = [];
+        arrayComprobaciones = arrayObjetivo.slice();
 
-        intento.forEach(function(elemento, index){
-            if(elemento == arrayObjetivo[index]){
-                
+        intento.forEach(function (elemento, index) {
+            if (elemento == arrayObjetivo[index]) {
                 resultado.push("negro");
                 arrayCorrectos.push(index);
             }
         });
-    
-        arrayCorrectos.forEach(function(elemento, index){
-            for(let i = 0; i < 4; i++){
-                if(i == arrayCorrectos[index]){
-                    arrayCombinacionAux[index] = -1;
+
+        arrayCorrectos.forEach(function (elemento, index) {
+            for (let i = 0; i < 4; i++) {
+                if (i == arrayCorrectos[index]) {
+                    arrayComprobaciones[index] = -1;
                 }
-            } 
+            }
         });
 
-        for(let i = 0; i< 4; i++){
-            for(let j = 0; j < 4; j++){
-                if(i != j && intento[i] == arrayCombinacionAux[j]){
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 4; j++) {
+                if (intento[i] == arrayComprobaciones[j] && i != j) {
                     resultado.push("blanco");
-                    arrayCombinacionAux[j] = -1;
+                    arrayComprobaciones[j] = -1;
                 }
-            }    
+            }
         }
 
         console.log(resultado);
         return resultado;
     }
-    let comprobarHasGanado = function (resultado){
-        if(resultado.length == 4){
+
+    let comprobarHasGanado = function (resultado) {
+        if (resultado.length == 4) {
             hasGanado = true;
-            resultado.forEach(function(i){
-                if(i != "negro"){
+            resultado.forEach(function (i) {
+                if (i != "negro") {
                     hasGanado = false;
                 }
             });
         }
         return hasGanado;
-        
     }
 
-    return{
-        init:init,
-        mostrar:mostrar,
-        comprobarCoincidencia:comprobarCoincidencia
+    return {
+        init: init,
+        mostrar: mostrar,
+        comprobarCoincidencia: comprobarCoincidencia
     }
 }();
