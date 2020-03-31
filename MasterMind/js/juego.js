@@ -5,6 +5,7 @@
         fichasElegidas = document.getElementById("coloresElegidos").getElementsByTagName("circle");
         fichasSolucion = document.getElementById("resultadoAciertos").getElementsByTagName("circle");
         document.getElementById("btnReiniciar").addEventListener("click", reiniciar);
+
         for (let i = 8; i < 16; i++) {
             fichas[i].addEventListener("click", ponerFicha);
         }
@@ -32,7 +33,7 @@
         }
     }
     let pintarSolucion = (solucion) => {
-        for (let i=0; i<solucion.length; i++) {
+        for (let i = 0; i < solucion.length; i++) {
             console.log(solucion[i]);
             if (solucion[i] == "negro") {
                 fichasSolucion[i].setAttribute("fill", "black");
@@ -73,17 +74,17 @@
         console.log(solucion);
 
         let comprobarSiHasGanado = (solucion) => {
-            for(let i = 0; i<=3; i++){
-                if(solucion[i] != "negro"){
+            for (let i = 0; i <= 3; i++) {
+                if (solucion[i] != "negro") {
                     return false;
                 }
             }
             return true;
         }
-        if(comprobarSiHasGanado(solucion)){
+        if (comprobarSiHasGanado(solucion)) {
             confirm("!!HAS GANADO¡¡");
             reiniciar();
-        }else{
+        } else {
             intento = "";
             masIntentos();
         }
