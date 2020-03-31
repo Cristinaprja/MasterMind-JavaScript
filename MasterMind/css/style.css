@@ -4,8 +4,9 @@
 }
 main{
     display: flex;
-    width: 60%;
-    margin: 0 auto;
+    border: 2px solid black;
+    height: 700px;
+    background-color: lightpink;
 }
 #cajaIzquierda{
     align-self: flex-end;
@@ -26,15 +27,21 @@ main{
 }
 #colores{
     width: min-content;
+    border: 1px solid black;
 }
 #comprobar{
     width: 70px
 }
 body{
-    display: inline-block;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 35%;
+    margin: 0 auto;
 }
 #btnReiniciar{
+    background-color: blue;
+    color: white;
+    font-size: 30px;
     margin-top: 10px;
     width: 50%;
     margin: 0 auto;
