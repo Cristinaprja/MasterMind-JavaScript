@@ -85,7 +85,6 @@
             intento = "";
             masIntentos();
         }
-
     }
 
     let masIntentos = () => {
