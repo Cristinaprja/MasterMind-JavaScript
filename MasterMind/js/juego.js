@@ -5,7 +5,6 @@
         fichasElegidas = document.getElementById("coloresElegidos").getElementsByTagName("circle");
         fichasSolucion = document.getElementById("resultadoAciertos").getElementsByTagName("circle");
         document.getElementById("btnReiniciar").addEventListener("click", reiniciar);
-
         for (let i = 8; i < 16; i++) {
             fichas[i].addEventListener("click", ponerFicha);
         }
@@ -34,7 +33,6 @@
     }
     let pintarSolucion = (solucion) => {
         for (let i = 0; i < solucion.length; i++) {
-            console.log(solucion[i]);
             if (solucion[i] == "negro") {
                 fichasSolucion[i].setAttribute("fill", "black");
             } else if (solucion[i] == "blanco") {
@@ -71,7 +69,6 @@
         }
         solucion = Mastermind.comprobarCoincidencia(intento);
         pintarSolucion(solucion);
-        console.log(solucion);
 
         let comprobarSiHasGanado = (solucion) => {
             for (let i = 0; i <= 3; i++) {
@@ -88,7 +85,9 @@
             intento = "";
             masIntentos();
         }
+
     }
+
     let masIntentos = () => {
         document.getElementById("combinaciones").parentNode.insertBefore(copiaCombinacion, document.getElementById('combinaciones'));
         copiaCombinacion = document.getElementById("combinaciones").cloneNode(true);
