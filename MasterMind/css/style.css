@@ -4,12 +4,17 @@
 }
 main{
     display: flex;
-    border: 2px solid black;
-    height: 700px;
-    background-color: lightpink;
 }
 #cajaIzquierda{
     align-self: flex-end;
+}
+#colores{
+    width: min-content;
+}
+#columnaColores{
+    width: min-content;
+    border: 1px solid black;
+    
 }
 #coloresElegidos{
     display: flex;
@@ -24,18 +29,13 @@ main{
 #combinaciones{
     min-width: 500px;
     display: flex;
+    align-self: flex-end;
 }
-#colores{
-    width: min-content;
-    border: 1px solid black;
-}
+
 #comprobar{
     width: 70px
 }
 body{
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 35%;
     margin: 0 auto;
 }
 #btnReiniciar{
@@ -43,6 +43,5 @@ body{
     color: white;
     font-size: 30px;
     margin-top: 10px;
-    width: 50%;
     margin: 0 auto;
 }

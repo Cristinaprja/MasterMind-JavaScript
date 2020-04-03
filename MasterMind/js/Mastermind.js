@@ -21,7 +21,6 @@ let Mastermind = function () {
         return resultadoComprobaciones;
     }
     let comprobaciones = function (intento) {
-        console.log("hola");
         arrayCorrectos = [];
         resultado = [];
         arrayComprobaciones = arrayObjetivo.slice();
