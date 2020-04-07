@@ -46,6 +46,7 @@ let Mastermind = function () {
                 if (intento[i] == arrayComprobaciones[j] && i!=j) {
                     resultado.push("blanco");
                     arrayComprobaciones[j] = 1;
+                    break;
                 }
             }
         }
