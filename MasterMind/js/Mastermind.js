@@ -43,7 +43,7 @@ let Mastermind = function () {
 
         for (let i = 0; i < 4; i++) {
             for (let j = 0; j < 4; j++) {
-                if (intento[i] == arrayComprobaciones[j] && i!=j) {
+                if (intento[i] == arrayComprobaciones[j] && i != j) {
                     resultado.push("blanco");
                     arrayComprobaciones[j] = 1;
                     break;
