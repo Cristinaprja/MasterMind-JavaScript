@@ -1,6 +1,6 @@
 let Mastermind = function () {
     let arrayObjetivo = [];
-    const COLORES = ["rojo", "amarillo", "naranja", "azul", "verde", "marrón", "blanco", "negro"];
+    const COLORES = ["red", "yellow", "orange", "blue", "green", "brown", "white", "black"];
     let hasGanado = false;
 
     let init = function () {

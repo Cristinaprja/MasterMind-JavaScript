@@ -49,22 +49,25 @@
         intento = [];
         let solucion;
         for (ficha of fichasElegidas) {
-            if (ficha.getAttribute("fill") == "red") {
-                intento.push("rojo")
-            } else if (ficha.getAttribute("fill") == "yellow") {
-                intento.push("amarillo")
-            } else if (ficha.getAttribute("fill") == "orange") {
-                intento.push("naranja")
-            } else if (ficha.getAttribute("fill") == "blue") {
-                intento.push("azul")
-            } else if (ficha.getAttribute("fill") == "green") {
-                intento.push("verde")
-            } else if (ficha.getAttribute("fill") == "brown") {
-                intento.push("marrón")
-            } else if (ficha.getAttribute("fill") == "white") {
-                intento.push("blanco")
-            } else if (ficha.getAttribute("fill") == "black") {
-                intento.push("negro")
+            switch(ficha.getAttribute("fill")){
+                case "red":
+                    intento.push("red");
+                    break;
+                case "yellow":
+                    intento.push("yellow");
+                    break;
+                case "orange":
+                    intento.push("orange");
+                    break;
+                case "blue":
+                    intento.push("blue");
+                    break;
+                case "green":
+                    intento.push("brown");
+                    break;
+                case "white":
+                    intento.push("white");
+                    break;
             }
         }
         solucion = Mastermind.comprobarCoincidencia(intento);
