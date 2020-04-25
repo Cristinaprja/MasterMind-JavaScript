@@ -4,7 +4,7 @@ let Mastermind = function () {
     let hasGanado = false;
 
     let init = function () {
-        for (i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
             arrayObjetivo.push(COLORES[Math.floor(Math.random() * COLORES.length)]);
         }
         console.log(arrayObjetivo);
