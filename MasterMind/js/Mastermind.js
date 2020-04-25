@@ -22,7 +22,7 @@ let Mastermind = function () {
     }
     let comprobaciones = function (intento) {
         let arrayCorrectos = [];
-        resultado = [];
+        let resultado = [];
         let arrayComprobaciones = arrayObjetivo.slice();
 
         intento.forEach(function (elemento, index) {
