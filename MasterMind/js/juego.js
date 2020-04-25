@@ -82,7 +82,8 @@
             return true;
         }
         if (comprobarSiHasGanado(solucion)) {
-            confirm("!!HAS GANADO¡¡");
+            document.getElementsByClassName(".modal").css("display", "block");
+            document.getElementById("#comprobar").off;
             reiniciar();
         } else {
             intento = "";
