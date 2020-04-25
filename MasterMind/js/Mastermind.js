@@ -21,9 +21,9 @@ let Mastermind = function () {
         return resultadoComprobaciones;
     }
     let comprobaciones = function (intento) {
-        arrayCorrectos = [];
+        let arrayCorrectos = [];
         resultado = [];
-        arrayComprobaciones = arrayObjetivo.slice();
+        let arrayComprobaciones = arrayObjetivo.slice();
 
         intento.forEach(function (elemento, index) {
             if (elemento == arrayComprobaciones[index]) {
