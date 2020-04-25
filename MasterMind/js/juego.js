@@ -74,7 +74,7 @@
         pintarSolucion(solucion);
 
         let comprobarSiHasGanado = (solucion) => {
-            for (let i = 0; i <= 3; i++) {
+            for (let i = 0; i < 4; i++) {
                 if (solucion[i] != "negro") {
                     return false;
                 }
