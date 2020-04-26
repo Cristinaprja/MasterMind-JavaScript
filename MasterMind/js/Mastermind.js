@@ -1,7 +1,6 @@
 let Mastermind = function () {
     let arrayObjetivo = [];
     const COLORES = ["red", "yellow", "orange", "blue", "green", "brown", "white", "black"];
-    let hasGanado = false;
 
     let init = function () {
         for (let i = 0; i < 4; i++) {
@@ -14,19 +13,13 @@ let Mastermind = function () {
         return arrayObjetivo;
     }
     let comprobarCoincidencia = function (intento) {
-        if (!hasGanado) {
-            resultadoComprobaciones = comprobaciones(intento);
-            comprobarHasGanado(resultadoComprobaciones);
-        }
-        return resultadoComprobaciones;
-    }
-    let comprobaciones = function (intento) {
         let arrayCorrectos = [];
         let resultado = [];
         let arrayComprobaciones = arrayObjetivo.slice();
 
         intento.forEach(function (elemento, index) {
             if (elemento == arrayComprobaciones[index]) {
+                console.log("dentro if");
                 resultado.push("negro");
                 arrayCorrectos.push(index);
             }
@@ -52,18 +45,6 @@ let Mastermind = function () {
         }
         console.log(resultado);
         return resultado;
-    }
-
-    let comprobarHasGanado = function (resultado) {
-        if (resultado.length == 4) {
-            hasGanado = true;
-            resultado.forEach(function (i) {
-                if (i != "negro") {
-                    hasGanado = false;
-                }
-            });
-        }
-        return hasGanado;
     }
 
     return {

@@ -49,42 +49,14 @@
         intento = [];
         let solucion;
         for (ficha of fichasElegidas) {
-            switch(ficha.getAttribute("fill")){
-                case "red":
-                    intento.push("red");
-                    break;
-                case "yellow":
-                    intento.push("yellow");
-                    break;
-                case "orange":
-                    intento.push("orange");
-                    break;
-                case "blue":
-                    intento.push("blue");
-                    break;
-                case "green":
-                    intento.push("brown");
-                    break;
-                case "white":
-                    intento.push("white");
-                    break;
-            }
+            intento.push(ficha.getAttribute("fill"));
         }
         solucion = Mastermind.comprobarCoincidencia(intento);
         pintarSolucion(solucion);
 
-        let comprobarSiHasGanado = (solucion) => {
-            for (let i = 0; i < 4; i++) {
-                if (solucion[i] != "negro") {
-                    return false;
-                }
-            }
-            return true;
-        }
-        if (comprobarSiHasGanado(solucion)) {
-            document.getElementsByClassName(".modal").css("display", "block");
-            document.getElementById("#comprobar").off;
-            reiniciar();
+        if(solucion.length === 4 && solucion.every((i)=>i === "negro")){
+            document.getElementById("modal").style.display= "block";
+            document.getElementById("comprobar").disabled = true;;
         } else {
             intento = "";
             masIntentos();
