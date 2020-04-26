@@ -7,7 +7,6 @@ let Mastermind = function () {
             arrayObjetivo.push(COLORES[Math.floor(Math.random() * COLORES.length)]);
         }
         console.log(arrayObjetivo);
-        return arrayObjetivo;
     }
     let mostrar = function () {
         return arrayObjetivo;
