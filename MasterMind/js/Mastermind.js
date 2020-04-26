@@ -6,7 +6,6 @@ let Mastermind = function () {
         for (let i = 0; i < 4; i++) {
             arrayObjetivo.push(COLORES[Math.floor(Math.random() * COLORES.length)]);
         }
-        console.log(arrayObjetivo);
     }
     let mostrar = function () {
         return arrayObjetivo;
@@ -18,7 +17,6 @@ let Mastermind = function () {
 
         intento.forEach(function (elemento, index) {
             if (elemento == arrayComprobaciones[index]) {
-                console.log("dentro if");
                 resultado.push("negro");
                 arrayCorrectos.push(index);
             }

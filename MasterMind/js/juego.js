@@ -43,7 +43,7 @@
     let checkIntento = () => {
         for (ficha of fichasElegidas) {
             if (ficha.getAttribute("fill") == "gray") {
-                return
+                return false;
             }
         }
         intento = [];
